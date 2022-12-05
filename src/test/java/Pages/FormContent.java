@@ -33,6 +33,11 @@ public class FormContent extends Parent {
     @FindBy(css = "mat-dialog-actions[class='mat-dialog-actions'] button[color='accent']")
     private WebElement deleteButton2;
 
+    @FindBy(xpath = "//mat-form-field[contains(@class,'mat-form-field-type-mat-input')]//input")
+    private WebElement notificationName;
+
+
+
     public FormContent() {
 
         PageFactory.initElements(GWD.getDriver(),this);
@@ -51,6 +56,12 @@ public class FormContent extends Parent {
                 break;
             case "searchCode":
                 myElement=searchCode;
+                break;
+            case "notificationName":
+                if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
+                    GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
+                }
+                myElement = notificationName;
                 break;
 
         }
@@ -79,6 +90,7 @@ public class FormContent extends Parent {
             case "deleteButtonLocations":
                 myElement = deleteButtonLocations;
                 break;
+
         }
         clickFunction(myElement);
     }

@@ -66,6 +66,17 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//ms-integer-field[contains(@placeholder,'GENERAL.FIELD.CAPACITY')])[1]//input")
     private WebElement capacity;
 
+    @FindBy(xpath = "//mat-form-field[contains(@class,'mat-form-field-type-ms-text-field')]//input")
+    private WebElement notificationName2;
+
+    @FindBy(xpath = "(//mat-select[contains(@class,'mat-select-required')]//div)[3]")
+    private WebElement notificationType;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[4]")
+    private WebElement examInfo;
+
+    @FindBy(xpath = "//mat-form-field[contains(@class,'mat-form-field-type-mat-input')]//textarea")
+    private WebElement description;
 
 
     public DialogContent() {
@@ -100,6 +111,12 @@ public class DialogContent extends Parent {
             case "capacity":
                 myElement = capacity;
                 break;
+            case "notificationName2":
+                myElement = notificationName2;
+                break;
+            case "description":
+                myElement = description;
+                break;
 
         }
         sendKeysFunction(myElement, value);
@@ -133,6 +150,12 @@ public class DialogContent extends Parent {
                 break;
             case "locationsActive":
                 myElement = locationsActive;
+                break;
+            case "notificationType":
+                myElement = notificationType;
+                break;
+            case "examInfo":
+                myElement = examInfo;
                 break;
 
         }

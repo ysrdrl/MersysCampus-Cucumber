@@ -24,6 +24,15 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Locations'])[1]")
     private WebElement locations;
 
+    @FindBy(xpath = "(//span[text()='Messaging'])[1]")
+    private WebElement messaging;
+
+    @FindBy(xpath = "(//span[text()='Notifications'])[1]")
+    private WebElement notification;
+
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement cookies;
+
 
 
     public LeftNav() {
@@ -60,6 +69,16 @@ public class LeftNav extends Parent {
             case "locations":
                 myElement=locations;
                 break;
+            case "messaging":
+                myElement=messaging;
+                break;
+            case "notification":
+                myElement=notification;
+                break;
+            case "cookies":
+                myElement=cookies;
+                break;
+
 
         }
         clickFunction(myElement);
