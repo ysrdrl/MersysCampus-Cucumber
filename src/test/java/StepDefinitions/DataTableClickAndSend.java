@@ -111,4 +111,14 @@ public class DataTableClickAndSend {
         }
 
     }
+
+    @And("Element wait form content")
+    public void elementWaitFormContent(DataTable elements) {
+
+        List<String> listElement = elements.asList(String.class);
+
+
+
+
+    }
 }

@@ -33,6 +33,15 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement cookies;
 
+    @FindBy(xpath = "(//span[text()='Education'])[1]")
+    private WebElement education;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[4]")
+    private WebElement educationSetup;
+
+    @FindBy(xpath = "(//span[text()='Subject Categories'])[1]")
+    private WebElement subjectCategories;
+
 
 
     public LeftNav() {
@@ -77,6 +86,15 @@ public class LeftNav extends Parent {
                 break;
             case "cookies":
                 myElement=cookies;
+                break;
+            case "education":
+                myElement=education;
+                break;
+            case "educationSetup":
+                myElement=educationSetup;
+                break;
+            case "subjectCategories":
+                myElement=subjectCategories;
                 break;
 
 

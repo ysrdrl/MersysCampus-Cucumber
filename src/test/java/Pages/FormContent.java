@@ -33,14 +33,13 @@ public class FormContent extends Parent {
     @FindBy(css = "mat-dialog-actions[class='mat-dialog-actions'] button[color='accent']")
     private WebElement deleteButton2;
 
-    @FindBy(xpath = "//mat-form-field[contains(@class,'mat-form-field-type-mat-input')]//input")
-    private WebElement notificationName;
-
+    @FindBy(xpath = "(//mat-form-field[contains(@class,'mat-form-field')])[1]//input")
+    private WebElement notificationSearchName;
 
 
     public FormContent() {
 
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
 
     }
 
@@ -49,19 +48,19 @@ public class FormContent extends Parent {
     public void findAndSend(String strElement, String value) {
         switch (strElement) {
             case "searchName":
-                myElement=searchName;
+                myElement = searchName;
                 if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
                     GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
                 }
                 break;
             case "searchCode":
-                myElement=searchCode;
+                myElement = searchCode;
                 break;
-            case "notificationName":
+            case "notificationSearchName":
                 if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
                     GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
                 }
-                myElement = notificationName;
+                myElement = notificationSearchName;
                 break;
 
         }
@@ -71,14 +70,14 @@ public class FormContent extends Parent {
     public void findAndClick(String strElement) {
         switch (strElement) {
             case "searchButton":
-                myElement=searchButton;
+                myElement = searchButton;
                 break;
             case "editButton":
-                myElement=editButton;
-                GWD.getWait().until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("ms-edit-button[class='ng-star-inserted']>button"),1));
+                myElement = editButton;
+                GWD.getWait().until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("ms-edit-button[class='ng-star-inserted']>button"), 1));
                 break;
             case "deleteButton":
-                myElement=deleteButton;
+                myElement = deleteButton;
                 GWD.getWait().until(ExpectedConditions.elementToBeClickable(searchButton));
                 break;
             case "deleteButton2":
@@ -110,6 +109,19 @@ public class FormContent extends Parent {
         findAndClick("deleteButton");
         findAndClick("deleteButton2");
 
+    }
+
+    public void waitElement(String strElement) {
+        switch (strElement) {
+            case "notificationSearchName":
+                myElement = notificationSearchName;
+                break;
+            case "searchName":
+                myElement = searchName;
+                break;
+
+        }
+        waitUntilVisible(myElement);
     }
 
 

@@ -72,6 +72,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-select[contains(@class,'mat-select-required')]//div)[3]")
     private WebElement notificationType;
 
+
     @FindBy(xpath = "(//span[@class='mat-option-text'])[4]")
     private WebElement examInfo;
 
@@ -117,7 +118,6 @@ public class DialogContent extends Parent {
             case "description":
                 myElement = description;
                 break;
-
         }
         sendKeysFunction(myElement, value);
     }
