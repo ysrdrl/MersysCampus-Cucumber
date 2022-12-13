@@ -30,7 +30,7 @@ public class DialogContent extends Parent {
     @FindBy(css = ".mat-slide-toggle-thumb")
     private WebElement stateExists;
 
-    @FindBy(xpath = "(//span[contains(@class,'mat-slide-toggle-thumb')])[22]")
+    @FindBy(xpath = "(//span[contains(@class,'mat-slide-toggle-thumb')])[2]")
     private WebElement locationsActive;
 
     @FindBy(xpath = "(//ms-text-field[@placeholder='GENERAL.FIELD.NAME'])[2]//input")
@@ -51,7 +51,7 @@ public class DialogContent extends Parent {
     @FindBy(css = "mat-form-field[formgroupname='country']")
     private WebElement countryMenu;
 
-    @FindBy(xpath = "//div[@role='listbox']//span[contains(text(),'Madagaskar')]")
+    @FindBy(xpath = "//div[@role='listbox']//span[contains(text(),' United States of America ')]")
     private WebElement selectCountry;
 
     @FindBy(xpath = "(//ms-text-field[contains(@placeholder,'GENERAL.FIELD')])[3]//input")

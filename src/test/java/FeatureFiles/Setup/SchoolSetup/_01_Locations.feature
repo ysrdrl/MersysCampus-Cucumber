@@ -28,7 +28,7 @@ Feature: Location Functionality
 
     Examples:
       | Name   | ShortName | Capacity |
-      | Tiflis | Gürcistan | 10       |
+      | Tiflis | Gürcistan | 100      |
 
 
   Scenario Outline: Update a Location
