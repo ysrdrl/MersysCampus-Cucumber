@@ -14,6 +14,7 @@ Feature: Location Functionality
 
     And Click on the element in the dialog content
       | addButton |
+
     And User sending the keys in the dialog
       | nameInputOnly | <Name>      |
       | shortNameOnly | <ShortName> |

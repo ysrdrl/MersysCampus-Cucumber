@@ -49,17 +49,17 @@ public class FormContent extends Parent {
         switch (strElement) {
             case "searchName":
                 myElement = searchName;
-                if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
-                    GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
-                }
+//                if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
+//                    GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
+//                }
                 break;
             case "searchCode":
                 myElement = searchCode;
                 break;
             case "notificationSearchName":
-                if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
-                    GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
-                }
+//                if (!GWD.getDriver().findElement(By.xpath("//ms-delete-button//button")).isDisplayed()) {
+//                    GWD.getWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ms-delete-button//button"), 0));
+//                }
                 myElement = notificationSearchName;
                 break;
 
@@ -74,7 +74,8 @@ public class FormContent extends Parent {
                 break;
             case "editButton":
                 myElement = editButton;
-                GWD.getWait().until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("ms-edit-button[class='ng-star-inserted']>button"), 1));
+               // GWD.getWait().until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("ms-edit-button[class='ng-star-inserted']>button"), 1));
+                GWD.getWait().until(ExpectedConditions.elementToBeClickable(searchButton));
                 break;
             case "deleteButton":
                 myElement = deleteButton;
