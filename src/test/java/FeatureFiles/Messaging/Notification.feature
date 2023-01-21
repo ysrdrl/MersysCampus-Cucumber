@@ -5,6 +5,7 @@ Feature: Notification Functionality
     When Enter username and password and click login button
     Then User should login successfuly
 
+
   Scenario: Create a notification
     And Click on the element in the left nav
       | cookies      |
@@ -27,6 +28,7 @@ Feature: Notification Functionality
 
     And Success message should be displayed
       | successMessage | success |
+
 
   Scenario: Update a notification
 
@@ -51,6 +53,7 @@ Feature: Notification Functionality
 
     And Success message should be displayed
       | successMessage | success |
+
 
   Scenario: Update a notification
 

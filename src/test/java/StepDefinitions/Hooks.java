@@ -18,7 +18,6 @@ public class Hooks {
 
     @Before
     public void before() {
-
         System.out.println("The Scenario Started...");
     }
 
@@ -33,7 +32,15 @@ public class Hooks {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 
-        ExcelUtility.writeExcel("src/test/java/ApachePOI/Resource/ScenarioStatus.xlsx", scenario, GWD.threadBrowserName.get(), date.format(formatter));
+        if (GWD.threadBrowserName.get().equals("firefox")) {
+            ExcelUtility.writeExcel("src/test/java/ApachePOI/Resource/FirefoxScenarioStatus.xlsx", scenario, GWD.threadBrowserName.get(), date.format(formatter));
+        }
+
+        if (GWD.threadBrowserName.get().equals("chrome")) {
+            ExcelUtility.writeExcel("src/test/java/ApachePOI/Resource/ChromeScenarioStatus.xlsx", scenario, GWD.threadBrowserName.get(), date.format(formatter));
+        }
+
+
 
         if (scenario.isFailed()) {
             // klasöre

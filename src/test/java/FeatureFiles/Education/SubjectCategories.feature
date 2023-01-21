@@ -5,6 +5,7 @@ Feature: Subject Categories Functionality
     When Enter username and password and click login button
     Then User should login successfuly
 
+  @SmokeTest
   Scenario: Create a subject categories
 
     And Click on the element in the left nav
@@ -25,7 +26,7 @@ Feature: Subject Categories Functionality
     And Success message should be displayed
       | successMessage | success |
 
-
+  @SmokeTest
   Scenario: Update a subject categories
 
     And Click on the element in the left nav
@@ -50,6 +51,7 @@ Feature: Subject Categories Functionality
     And Success message should be displayed
       | successMessage | success |
 
+  @SmokeTest
   Scenario: Delete a subject categories
 
     And Click on the element in the left nav

@@ -4,8 +4,6 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
 public class DialogContent extends Parent {
 
@@ -30,7 +28,7 @@ public class DialogContent extends Parent {
     @FindBy(css = ".mat-slide-toggle-thumb")
     private WebElement stateExists;
 
-    @FindBy(xpath = "(//span[contains(@class,'mat-slide-toggle-thumb')])[2]")
+    @FindBy(css = "ms-dialog-content[formgroup='[object Object]'] span[class='mat-slide-toggle-thumb']")
     private WebElement locationsActive;
 
     @FindBy(xpath = "(//ms-text-field[@placeholder='GENERAL.FIELD.NAME'])[2]//input")

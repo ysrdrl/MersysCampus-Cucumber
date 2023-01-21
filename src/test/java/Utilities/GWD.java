@@ -40,7 +40,7 @@ public class GWD {
                     if (!runningFromIntelliJ()){
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver(options)); // bu thread e chrome istenmişşse ve yoksa bir tane ekleniyor
+                    threadDriver.set(new ChromeDriver(options)); // Bu thread'e chrome istenmişşse ve yoksa bir tane ekleniyor.
                 }else {
                         threadDriver.set(new ChromeDriver());
                     }

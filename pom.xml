@@ -76,6 +76,14 @@
             <version>5.2.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
         <!--TestNG Extend Reports Adapter-->
@@ -111,9 +119,51 @@
             <version>8.0.30</version>
         </dependency>
 
-
-
-
     </dependencies>
+
+        <build>
+            <plugins>
+
+                <plugin><!--derlemek için-->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                    <configuration>
+
+
+
+                        <suiteXmlFiles>
+                            <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterReport.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>net.masterthought</groupId>
+                    <artifactId>maven-cucumber-reporting</artifactId>
+                    <version>2.8.0</version>
+
+                    <executions>
+                        <execution>
+                            <id>execution</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <configuration>
+                                <projectName>Project Name</projectName>
+                                <outputDirectory>${project.build.directory}/Report/cucumber-reports</outputDirectory>
+                                <cucumberOutput>${project.build.directory}/cucumber/cucumber.json</cucumberOutput>
+                                <skippedFails>true</skippedFails>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+
+        </build>
+
 
 </project>

@@ -5,6 +5,7 @@ Feature: States Functionality
     When Enter username and password and click login button
     Then User should login successfuly
 
+  @RegressionTest
   Scenario: Create a states
 
     And Click on the element in the left nav
@@ -27,6 +28,7 @@ Feature: States Functionality
     And Success message should be displayed
       | successMessage | success |
 
+  @RegressionTest
   Scenario: Update a states
 
     And Click on the element in the left nav
@@ -51,6 +53,7 @@ Feature: States Functionality
     And Success message should be displayed
       | successMessage | success |
 
+  @RegressionTest
   Scenario: Delete a states
 
     And Click on the element in the left nav

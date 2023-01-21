@@ -5,6 +5,7 @@ Feature: Country Functionality
     When Enter username and password and click login button
     Then User should login successfuly
 
+  @RegressionTest
   Scenario: Create a country
     And Click on the element in the left nav
       | setup      |
@@ -24,6 +25,7 @@ Feature: Country Functionality
     And Success message should be displayed
       | successMessage | success |
 
+  @RegressionTest
   Scenario: Update a Country
 
     And Click on the element in the left nav
@@ -48,6 +50,7 @@ Feature: Country Functionality
     And Success message should be displayed
       | successMessage | success |
 
+  @RegressionTest
   Scenario: Delete a Country
 
     And Click on the element in the left nav
