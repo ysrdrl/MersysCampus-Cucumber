@@ -37,12 +37,16 @@ public class GWD {
                 case "chrome":
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     WebDriverManager.chromedriver().setup();
-                    if (!runningFromIntelliJ()){
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver(options)); // Bu thread'e chrome istenmişşse ve yoksa bir tane ekleniyor.
-                }else {
-                        threadDriver.set(new ChromeDriver());
+                    if (!runningFromIntelliJ()) {
+                        ChromeOptions options = new ChromeOptions();
+                        options.addArguments("--remote-allow-origins=*");
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new ChromeDriver(options)); // Bu thread'e chrome istenmişşse ve yoksa bir tane ekleniyor.
+                    } else {
+                        ChromeOptions options = new ChromeOptions();
+                        options.addArguments("--remote-allow-origins=*");
+                        threadDriver.set(new ChromeDriver(options));
+
                     }
                     break;
 
@@ -83,9 +87,8 @@ public class GWD {
             WebDriver driver = threadDriver.get();
             driver = null;
             threadDriver.set(driver);
-        }
-        else {
-            if (GWD.getDriver()==null){
+        } else {
+            if (GWD.getDriver() == null) {
                 GWD.getDriver().quit();
             }
         }
