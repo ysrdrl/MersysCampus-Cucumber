@@ -14,7 +14,7 @@ public class FormContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.CODE']//input")
     private WebElement searchCode;
 
-    @FindBy(xpath = "//button[contains(@class,'mat-raised-button mat-button-base mat-accent')]")
+    @FindBy(xpath = "//button[contains(@class,'mat-raised-button')]")
     private WebElement searchButton;
 
     @FindBy(css = "ms-edit-button[class='ng-star-inserted']>button")
